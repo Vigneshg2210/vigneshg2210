@@ -13,5 +13,5 @@ jobs:
 
       - name: Push to GitLab
         run: |
-          git remote add gitlab https://oauth2:${{ secrets.GITLAB_PAT }}@gitlab.com/Vignesh/mirror.git
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_PAT }}@gitlab.pinnacleseven.com/Vignesh/mirror.git
           git push gitlab main --force
