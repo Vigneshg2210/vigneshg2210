@@ -1,0 +1,17 @@
+name: Sync to GitLab
+on:
+  push:
+    branches:
+      - main  # Specify the branch to sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Push to GitLab
+        run: |
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_PAT }}@gitlab.com/Vignesh/mirror.git
+          git push gitlab main --force
